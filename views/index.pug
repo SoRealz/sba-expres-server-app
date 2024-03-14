@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1.text-center.text-white Welcome to #{title} Gallery
+    // Display image grid
+    .container.mt-4
+        .row
+            each image in images
+                .col-md-4.mb-4
+                    img.img-thumbnail(src=`${image.url}`, alt=`${image.title}`)
