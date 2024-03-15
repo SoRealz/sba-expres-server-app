@@ -12,27 +12,44 @@ Welcome to the Image Gallery & User App! This project is designed to showcase an
 - Manage users.
 
 ## Project Structure
-image-gallery-user-app/
-├── data/
-│ └── users.js
-├── index/
-│ ├── aurora.jpg
-│ ├── beach_from_above.jpg
-│ ├── ...
-│ └── white_mountains.jpg
-├── public/
-│ ├── css/
-│ │ └── styles.css
-│ └── icon/
-│ └── aalion.jpg
-├── routes/
-│ └── index.js
-├── views/
-│ └── users.pug
-├── app.js
-├── package.json
-├── package-lock.json
-├── README.md
+sba-express-server-app/
+|-- data/
+|   |-- imageDetails.js
+|   |-- post.js
+|   |-- tech.js
+|   |-- users.js
+|-- middlewares/
+|   |-- customHeaderMiddleware.js
+|   |-- errorMiddleware.js
+|   |-- maintenanceMiddleware.js
+|   |-- versionHeader.js
+|-- public/
+|   |-- css/
+|   |   |-- styles.css
+|   |-- icon/
+|   |   |-- aalion.jpg
+|   |   |-- maintenance.jpg
+|   |-- nature/
+|-- routes/
+|   |-- imageDetails.js
+|   |-- images.js
+|   |-- index.js
+|   |-- users.js
+|-- views/
+|   |-- details.pug
+|   |-- footer.pug
+|   |-- images.pug
+|   |-- index.pug
+|   |-- layout.pug
+|   |-- maintenance.pug
+|   |-- navbar.pug
+|   |-- users.pug
+|-- .gitignore
+|-- app.js
+|-- package-lock.json
+|-- package.json
+|-- README.md
+
 
 
 
