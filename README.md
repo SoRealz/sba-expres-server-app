@@ -12,30 +12,30 @@ Welcome to the Image Gallery & User App! This project is designed to showcase an
 - Manage users.
 
 ## Project Structure
-    sba-express-server-app\/
-    |-- data\/
+    sba-express-server-app/
+    |-- data/
     |   |-- imageDetails.js
     |   |-- post.js
     |   |-- tech.js
     |   |-- users.js
-    |-- middlewares\/
+    |-- middlewares/
     |   |-- customHeaderMiddleware.js
     |   |-- errorMiddleware.js
     |   |-- maintenanceMiddleware.js
     |   |-- versionHeader.js
-    |-- public\/
-    |   |-- css\/
+    |-- public/
+    |   |-- css/
     |   |   |-- styles.css
-    |   |-- icon\/
+    |   |-- icon/
     |   |   |-- aalion.jpg
     |   |   |-- maintenance.jpg
-    |   |-- nature\/
-    |-- routes\/
+    |   |-- nature/
+    |-- routes/
     |   |-- imageDetails.js
     |   |-- images.js
     |   |-- index.js
     |   |-- users.js
-    |-- views\/
+    |-- views/
     |   |-- details.pug
     |   |-- footer.pug
     |   |-- images.pug
