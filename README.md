@@ -12,7 +12,27 @@ Welcome to the Image Gallery & User App! This project is designed to showcase an
 - Manage users.
 
 ## Project Structure
-
+image-gallery-user-app/
+├── data/
+│ └── users.js
+├── index/
+│ ├── aurora.jpg
+│ ├── beach_from_above.jpg
+│ ├── ...
+│ └── white_mountains.jpg
+├── public/
+│ ├── css/
+│ │ └── styles.css
+│ └── icon/
+│ └── aalion.jpg
+├── routes/
+│ └── index.js
+├── views/
+│ └── users.pug
+├── app.js
+├── package.json
+├── package-lock.json
+├── README.md
 
 
 
