@@ -69,34 +69,32 @@ router.get('/', (req, res) => {
 
     res.render('users', response);
 });
+// this is the base line *work on adding to this file instead of app.js*//
+// router.post("/users", (req, res) => {
+//     // Within the POST request route, we create a new user with the data given by the client.
+//     // We should also do some more robust validation here, but this is just an example for now
+//     if (req.body.name && req.body.username && req.body.email) {
+//       if (users.find((u) => u.username == req.body.username)) {
+//         res.json({ error: `${u.username} already exists` });
+//         return;
+//       }
+  
+//       const newUser = {
+//         id: users[users.length - 1].id + 1,
+//         name: req.body.name,
+//         username: req.body.username,
+//         email: req.body.email,
+//       };
+  
+//       users.push(newUser);
+//       res.json(users[users.length - 1]);
+//     } else {
+//       res.json({ error: `Insufficient Data` });
+//     }
+//   });
 
-router.post('/', (req, res) => {
-    const { name, username, email } = req.body;
-    
-    // Check if all required fields are present
-    if (!name || !username || !email) {
-        return res.status(400).json({ error: 'Insufficient Data: needs name, username, and email' });
-    }
 
-    // Check if username already exists
-    if (users.some(u => u.username === username)) {
-        return res.status(400).json({ error: `Username already exists: ${username}` });
-    }
-
-    // Create a new user
-    const newUser = {
-        id: users.length > 0 ? users[users.length - 1].id + 1 : 1,
-        name,
-        username,
-        email
-    };
-
-    users.push(newUser);
-    console.log(`Successfully added new user: ${newUser.id}, ${newUser.name}, ${newUser.username}, ${newUser.email}`);
-    
-    res.status(201).json(newUser);
-});
-
+//need to work on delete//not working yet//move to app.js for now until figured out//
 
 router.delete('/:id', (req, res) => {
     const userId = parseInt(req.params.id);

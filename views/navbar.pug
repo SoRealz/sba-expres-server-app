@@ -12,3 +12,12 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
                 a.nav-link(href='/images') Images
             li.nav-item
                 a.nav-link(href='/posts') Posts    
+
+                  li.nav-item
+                | 
+                //- Add a separator between links and form
+            li.nav-item
+                //- Add your form here
+                form.navbar-form.form-inline.my-2.my-lg-0(action='/submit', method='POST')
+                    input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search

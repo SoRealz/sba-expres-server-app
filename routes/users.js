@@ -70,6 +70,34 @@ router.get('/', (req, res) => {
     res.render('users', response);
 });
 
+
+
+router.post("/users", (req, res) => {
+    // Within the POST request route, we create a new user with the data given by the client.
+    // We should also do some more robust validation here, but this is just an example for now
+    if (req.body.name && req.body.username && req.body.email) {
+      if (usersRouter.find((u) => u.username == req.body.username)) {
+        res.json({ error: `${u.username} already exists` });
+        return;
+      }
+  
+      const newUser = {
+        id: usersRouter[usersRouter.length - 1].id + 1,
+        name: req.body.name,
+        username: req.body.username,
+        email: req.body.email,
+      };
+  
+      usersRouter.push(newUser);
+      res.json(usersRouter[usersRouter.length - 1]);
+    } else {
+      res.json({ error: `Insufficient Data` });
+    }
+  });
+
+
+
+
 module.exports = router;
 
 // Add links to the routes to conform to rest principles

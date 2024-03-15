@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-// const usersRouter = require('./routes/users');
+const users = require('./data/users');
 const imagesRouter = require('./routes/images');
 const imageDetailsRouter = require('./routes/imageDetails');
 const handleErrors = require('./middlewares/errorMiddleware');
@@ -65,3 +65,29 @@ const PORT = process.env.PORT || 4001;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+//this one is working//POST will add using PostMan//
+
+app.post("/users", (req, res) => {
+    // Within the POST request route, we create a new user with the data given by the client.
+    // We should also do some more robust validation here, but this is just an example for now
+    if (req.body.name && req.body.username && req.body.email) {
+      if (users.find((u) => u.username == req.body.username)) {
+        res.json({ error: `${u.username} already exists` });
+        return;
+      }
+  
+      const newUser = {
+        id: users[users.length - 1].id + 1,
+        name: req.body.name,
+        username: req.body.username,
+        email: req.body.email,
+      };
+  
+      users.push(newUser);
+      res.json(users[users.length - 1]);
+    } else {
+      res.json({ error: `Insufficient Data` });
+    }
+  });
