@@ -10,7 +10,7 @@ const userData = [
     { id: 8,  name: 'Amanda Anderson', username: 'biggs@1000', email: 'biggs_1000@gmail.com' },
     { id: 9,  name: 'Matthew Thompson', username: 'sharlan', email: 'rine_1ne@gmail.com' },
     { id: 10,  name: 'Jessica Garcia', username: 'gustim', email: 'gustim@gmail.com' },
-    { id: 11,  name: 'Daniel White', username: 'terryJ', email: 't3rryJ@gmail.com' },
+    { id: 11,  name: 'Daniel White', username: 'daniel_w', email: 't3rryJ@gmail.com' },
     { id: 12,  name: 'Samantha Clark', username: 'braggs.K100', email: 'kelly_100@gmail.com' },
 ];
 

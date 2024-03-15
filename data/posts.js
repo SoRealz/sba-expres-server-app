@@ -1,17 +1,18 @@
-const posts = [{ id: 1, name: 'Jacob', username: 'Jayrockid', email: 'jayrockkid@yahoo.com'}];
 
-module.exports = posts;
+const axios = require('axios');
 
-// POST route to create a new post
-app.post('/posts', (req, res) => {
-  const newPost = req.body;
+const userData = {
+    name: 'John Doe',
+    username: 'johndoe',
+    email: 'johndoe@example.com'
+};
 
-  // Add the new post to the posts array
-  posts.push(newPost);
-
-  // Respond with the newly created post
-  res.status(201).json(newPost);
-});
-
-
+axios.post('http://localhost:4001/api/users', userData)
+    .then(response => {
+        console.log('Response:', response.data);
+    })
+    .catch(error => {
+        console.error('Error:', error.response.data);
+    });
   
+    
