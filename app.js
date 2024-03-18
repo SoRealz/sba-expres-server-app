@@ -12,6 +12,7 @@ const versionHeader = require('./middlewares/versionHeader');
 const customHeaderMiddleware = require('./middlewares/customHeaderMiddleware');
 const maintenanceMiddleware = require('./middlewares/maintenanceMiddleware');
 
+
 const Router = require('./routes/posts');
 
 
@@ -91,3 +92,22 @@ app.post("/users", (req, res) => {
       res.json({ error: `Insufficient Data` });
     }
   });
+
+  app.delete('/users/:id', (req, res) => {
+    const userId = parseInt(req.params.id);
+
+    // Find the index of the user with the specified ID
+    const userIndex = users.findIndex(u => u.id === userId);
+
+    if (userIndex !== -1) {
+        // Remove the user from the array
+        const deletedUser = users.splice(userIndex, 1)[0];
+        console.log(`Successfully deleted user: ${deletedUser.id}, ${deletedUser.name}, ${deletedUser.username}, ${deletedUser.email}`);
+        
+        // Respond with the deleted user
+        res.status(200).json(deletedUser);
+    } else {
+        // Respond with an error if user with the specified ID is not found
+        res.status(404).json({ error: `User with ID ${userId} not found` });
+    }
+});
