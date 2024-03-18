@@ -111,3 +111,25 @@ app.post("/users", (req, res) => {
         res.status(404).json({ error: `User with ID ${userId} not found` });
     }
 });
+
+
+
+// GET route for retrieving users with query parameter filtering
+app.get('/users', (req, res) => {
+  let filteredUsers = [...users]; // Create a copy of users array to preserve original data
+  
+  // Check if query parameters are present
+  if (req.query.username) {
+      // Filter users by username if provided in query parameters
+      filteredUsers = filteredUsers.filter(user => user.username === req.query.username);
+  }
+  
+  // You can add more conditions to filter based on other query parameters like name, email, etc.
+  // For example:
+  // if (req.query.name) {
+  //     filteredUsers = filteredUsers.filter(user => user.name === req.query.name);
+  // }
+
+  // Respond with filtered users
+  res.json(filteredUsers);
+});
